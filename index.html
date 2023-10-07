@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoAss1</title>
+</head>
+<body>
+    <section>
+        <div>
+            <h3>Create a Database and Give it name like Human_Resources, create a collection inside it name employee</h3>
+            <pre>
+                use Human_Resources
+            </pre>
+        </div>
+        <div>
+            <h3>Query the collection employee and list all the document</h3>
+            <pre>
+                db.employee.insertMany([{},{},{}])
+            </pre>
+        </div>
+        <div>
+            <h3>Query the collection employee and list the employee who have salary more than 30000</h3>
+            <pre>
+                db.employee.find({"salary": {$gt: "300000"}})
+            </pre>
+        </div>
+        <div>
+            <h3>Query the collection employee and list the employee who have exprence more than 2yers</h3>
+            <pre>
+                db.employee.find({"overallExp": {$gte: "2"}})
+            </pre>
+        </div>
+        <div>
+            <h3>Query the collection employee and list the employee who are graduate after 2015 and having experiance more than 1year</h3>
+            <pre>
+                db.employee.find({"yearGrad" : {$gte: "2015"}},{"overallExp": {$gt: "1"}})
+            </pre>
+        </div>
+        <div>
+            <h3>Query the collection of employee and update there salary of employee whose salary greter than 70000 to 65000</h3>
+            <pre>
+                db.employee.updateOne({"salary": {$gt: "70000"}}, {$set: {"salary": "65000"}})
+            </pre>
+        </div>
+        <div>
+            <h3>Delete the all the document from employee whose lastCompany is "Y"</h3>
+            <pre>
+                db.employee.deleteMany({"lastCompany": "Y"})
+            </pre>
+        </div>
+    </section>
+</body>
+</html>
